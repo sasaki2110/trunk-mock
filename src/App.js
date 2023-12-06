@@ -83,6 +83,7 @@ export default function App() {
               <img src="img/sinagawa1.jpeg" alt="ほんとはピロピロしたい" height="450px"/>
               <Label>ここはほんとはスワイパーを置きたい</Label>
 
+
             </Flex>
             <Flex direction="column" gap="0rem">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.4012566583356!2d139.80864417476812!3d35.667120669996976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018890082b85bc3%3A0xcf533b02ac169ede!2z44Ki44OR44Ob44OG44Or44CI5p2x5Lqs5pyo5aC044CJ!5e0!3m2!1sja!2sjp!4v1701843061344!5m2!1sja!2sjp" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
