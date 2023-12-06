@@ -88,7 +88,7 @@ function MenuBar2() {
 }
 
 function MenuBar( { breakPoint } ) {
-  if(breakPoint=="small") {
+  if(breakPoint=="small" || breakPoint==null)  {
     return(MenuBar2());
   } else {
     return(MenuBar1());
