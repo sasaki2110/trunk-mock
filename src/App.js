@@ -80,7 +80,7 @@ export default function App() {
           <Label>東京都品川区東品川１丁目</Label>
           <Flex direction="row">
             <Flex direction="column">
-              <img src="sinagawa1.png" alt="ほんとはピロピロしたい" height="450px"/>
+              <img src="img/sinagawa1.png" alt="ほんとはピロピロしたい" height="450px"/>
               <Label>ここはほんとはスワイパーを置きたい</Label>
 
 
