@@ -67,6 +67,7 @@ function MenuBar2() {
       </Flex>
     )
   }
+
   return(
     <Grid templateColumns="1fr 1fr 1fr 1fr 1fr">
       <Image 
@@ -84,7 +85,6 @@ function MenuBar2() {
       <ToggleMenu />
     </Grid>
   )
-
 }
 
 function MenuBar( { breakPoint } ) {
@@ -107,7 +107,7 @@ export default function App() {
     <View>
       <Flex direction="column" maxWidth="90%" margin="0 auto">
         <MenuBar breakPoint={breakPoint}/>
-          <h1><font  color={tokens.colors.red[40]}>トランクルーム掘げほげ</font></h1>
+          <h1><font  color={tokens.colors.red[40]}>トランクルーム掘げほげ {breakPoint}</font></h1>
           <Flex gap="0rem" direction="column">
             <Label height="1rem">◆ここに店舗説明</Label>
             <Label height="1rem">◆ここに店舗説明がならぶはず</Label>
