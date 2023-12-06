@@ -7,7 +7,12 @@ import {
   Image,
   Grid, 
   Label,
- } from '@aws-amplify/ui-react';
+  Table,
+  TableCell,
+  TableBody,
+  TableHead,
+  TableRow,
+} from '@aws-amplify/ui-react';
 
 // メニューバー
 // Gridで５フレームを横方向に用意
@@ -96,6 +101,101 @@ export default function App() {
             <Label fontSize={tokens.fontSizes.xs}>※画像はイメージです。各店舗での詳細は上部店舗画像をご確認ください。</Label>
             <Label fontSize={tokens.fontSizes.xs}>※画像内保管品：段ボール 奥行61×幅41×高さ38cm（140サイズ）／ 衣装ケース 奥行70×幅39×高さ30cm</Label>
           </Flex>
+
+          <hr width="100%"/>
+
+          <Grid templateColumns="1fr 1fr 1fr 1fr 1fr">
+            <Flex direction="column">
+              <Image 
+                src="img/small-pc.png"
+              />
+              <Label>部屋タイプ 小（0.4畳〜1畳）</Label>
+            </Flex>
+
+            <Flex
+              columnStart="2"
+              columnEnd="6"
+            >
+              <Table
+                caption=""
+                highlightOnHover={false}>
+                <TableHead>
+                  <TableRow>
+                    <TableCell as="th">広さ</TableCell>
+                    <TableCell as="th">月額使用料</TableCell>
+                    <TableCell as="th"></TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  <TableRow>
+                    <TableCell>1.0畳 / 1.66㎡</TableCell>
+                    <TableCell>18,700円</TableCell>
+                    <TableCell>
+                      <Button>見学</Button>
+                      <Button>契約</Button>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>1.0畳 / 1.66㎡</TableCell>
+                    <TableCell>19,800円</TableCell>
+                    <TableCell>
+                      <Button>見学</Button>
+                      <Button>契約</Button>
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </Flex>
+          </Grid>
+
+          <hr width="100%"/>
+
+          <Grid templateColumns="1fr 1fr 1fr 1fr 1fr">
+            <Flex direction="column">
+              <Image 
+                src="img/middle-pc.png"
+              />
+              <Label>部屋タイプ 中（1.1畳〜1.9畳）</Label>
+            </Flex>
+
+            <Flex
+              columnStart="2"
+              columnEnd="6"
+            >
+              <Table
+                caption=""
+                highlightOnHover={false}>
+                <TableHead>
+                  <TableRow>
+                    <TableCell as="th">広さ</TableCell>
+                    <TableCell as="th">月額使用料</TableCell>
+                    <TableCell as="th"></TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  <TableRow>
+                    <TableCell>1.2畳 / 2.00㎡</TableCell>
+                    <TableCell>23,100円</TableCell>
+                    <TableCell>
+                      <Button>見学</Button>
+                      <Button>契約</Button>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>1.5畳 / 2.48㎡</TableCell>
+                    <TableCell>27,500円</TableCell>
+                    <TableCell>
+                      <Button>見学</Button>
+                      <Button>契約</Button>
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </Flex>
+          </Grid>
+
+          <hr width="100%"/>
+
       </Flex>
     </View>
   );
