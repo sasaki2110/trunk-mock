@@ -55,6 +55,7 @@ function MenuBar1() {
 
 // メニューバー２（スマホ用）
 // 「三」ボタンでメニューバーとトグルする
+// 適当に自作したけど、本当はReact-UI のMenuを使えばいいかも？
 function MenuBar2() {
   const [isOpen, setIsOpen] = useState(false);
   function handleClick(){
