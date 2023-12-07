@@ -12,10 +12,42 @@ import {
   TableBody,
   TableHead,
   TableRow,
+  useBreakpointValue,
 } from '@aws-amplify/ui-react';
+
+function ResponsImg({breakPoint})
+{
+  if(breakPoint==="small" || breakPoint===null)  {
+    return (
+      <img src="img/sinagawa1.png" alt="ほんとはピロピロしたい" width="100%"/>
+      )
+  } else {
+    return (
+      <img src="img/sinagawa1.png" alt="ほんとはピロピロしたい" height="450px"/>
+      )
+  }
+}
+
+function ResponsIframe({breakPoint})
+{
+  if(breakPoint==="small" || breakPoint===null)  {
+    return (
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.4012566583356!2d139.80864417476812!3d35.667120669996976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018890082b85bc3%3A0xcf533b02ac169ede!2z44Ki44OR44Ob44OG44Or44CI5p2x5Lqs5pyo5aC044CJ!5e0!3m2!1sja!2sjp!4v1701843061344!5m2!1sja!2sjp" width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="map"></iframe>
+      )
+  } else {
+    return (
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.4012566583356!2d139.80864417476812!3d35.667120669996976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018890082b85bc3%3A0xcf533b02ac169ede!2z44Ki44OR44Ob44OG44Or44CI5p2x5Lqs5pyo5aC044CJ!5e0!3m2!1sja!2sjp!4v1701843061344!5m2!1sja!2sjp" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="map"></iframe>
+      )
+  }
+}
 
 export default function Home() {
   const { tokens } = useTheme();
+  const breakPoint = useBreakpointValue( {
+    small: "small",
+    medium: "medium",
+    xxl: "xxl",
+  })
   
   return (
     <View>
@@ -27,13 +59,12 @@ export default function Home() {
         <Label>東京都品川区東品川１丁目</Label>
         <Flex direction="row" wrap="wrap">
           <Flex direction="column">
-            <img src="img/sinagawa1.png" alt="ほんとはピロピロしたい" height="450px"/>
+            <ResponsImg breakPoint={breakPoint}/>
             <Label>ここはほんとはスワイパーを置きたい</Label>
-
 
           </Flex>
           <Flex direction="column" gap="0rem">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.4012566583356!2d139.80864417476812!3d35.667120669996976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018890082b85bc3%3A0xcf533b02ac169ede!2z44Ki44OR44Ob44OG44Or44CI5p2x5Lqs5pyo5aC044CJ!5e0!3m2!1sja!2sjp!4v1701843061344!5m2!1sja!2sjp" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="map"></iframe>
+            <ResponsIframe breakPoint={breakPoint} />
             <Label>住所やら</Label>
             <Label>電話番号やら</Label>
             <Label>駐車場やら</Label>
