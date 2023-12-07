@@ -68,6 +68,10 @@ export default function Reserve() {
                 <hr width="100%"/>
             </div>
 
+            <Flex  backgroundColor={tokens.colors.green[10]}>
+                本来なら、お部屋を選んで来た場合は、ここにお部屋情報を表示。これもフォームに加えんと。
+            </Flex>
+
             <div>
                 <RadioGroupField name="userType" legend="個人・法人*" name="userType" defaultValue="Private" direction="row">
                   <Radio value="Private">個人</Radio>

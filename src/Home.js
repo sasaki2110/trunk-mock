@@ -14,7 +14,7 @@ import {
   TableRow,
   useBreakpointValue,
 } from '@aws-amplify/ui-react';
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 function ResponsImg({breakPoint})
 {
@@ -50,6 +50,15 @@ export default function Home() {
     xxl: "xxl",
   });
   const params = useParams();
+
+  const navigate = useNavigate();
+
+  function handleClickReserv(){
+    navigate("/reserv");
+  }
+
+  // ここでparamsを元に、Appsync経由でDynamoDBを参照
+  // その結果を下記の文言に設定する
   
   return (
     <View>
@@ -107,7 +116,7 @@ export default function Home() {
                   <TableCell>1.0畳 / 1.66㎡</TableCell>
                   <TableCell>18,700円</TableCell>
                   <TableCell>
-                    <Button>見学</Button>
+                    <Button onClick={handleClickReserv}>見学</Button>
                     <Button>契約</Button>
                   </TableCell>
                 </TableRow>
@@ -115,7 +124,7 @@ export default function Home() {
                   <TableCell>1.0畳 / 1.66㎡</TableCell>
                   <TableCell>19,800円</TableCell>
                   <TableCell>
-                    <Button>見学</Button>
+                    <Button onClick={handleClickReserv}>見学</Button>
                     <Button>契約</Button>
                   </TableCell>
                 </TableRow>
@@ -153,7 +162,7 @@ export default function Home() {
                   <TableCell>1.2畳 / 2.00㎡</TableCell>
                   <TableCell>23,100円</TableCell>
                   <TableCell>
-                    <Button>見学</Button>
+                    <Button onClick={handleClickReserv}>見学</Button>
                     <Button>契約</Button>
                   </TableCell>
                 </TableRow>
@@ -161,7 +170,7 @@ export default function Home() {
                   <TableCell>1.5畳 / 2.48㎡</TableCell>
                   <TableCell>27,500円</TableCell>
                   <TableCell>
-                    <Button>見学</Button>
+                    <Button onClick={handleClickReserv}>見学</Button>
                     <Button>契約</Button>
                   </TableCell>
                 </TableRow>
