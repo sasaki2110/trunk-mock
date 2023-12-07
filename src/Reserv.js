@@ -9,11 +9,23 @@ import {
     Radio,
     Button,
 } from '@aws-amplify/ui-react';
+import { useNavigate } from "react-router-dom";
   
 export default function Reserve() {
+    const navigate = useNavigate();
 
-    function handleSumbit() {
-        alert("submited!")
+    function handleSumbit(event) {
+        event.preventDefault();
+        const form = new FormData(event.target);
+
+        //navigate('/reservcheck', { state: { form: {form} } });
+        navigate('/reservcheck', { state: { 
+            userType: form.get("userType"),
+            name: form.get("name"),
+            kana: form.get("kana"),
+            mailAddress: form.get("mailAddress"),
+            phoneNumber: form.get("phoneNumber")
+        } });
     }
 
     const { tokens } = useTheme();
@@ -57,15 +69,15 @@ export default function Reserve() {
             </div>
 
             <div>
-                <RadioGroupField legend="個人・法人*" name="userType" defaultValue="Private" direction="row">
+                <RadioGroupField name="userType" legend="個人・法人*" name="userType" defaultValue="Private" direction="row">
                   <Radio value="Private">個人</Radio>
                   <Radio value="Company">法人</Radio>
                 </RadioGroupField>
                 <hr width="100%"/>
-                <TextField label="お名前*" placeholder="山田　太郎"></TextField>
-                <TextField label="お名前（カナ）*" placeholder="ヤマダ　タロウ"></TextField>
-                <TextField label="メールアドレス*" placeholder="example@example.com"></TextField>
-                <TextField label="電話番号*" placeholder="080-xxxx-xxxx"></TextField>
+                <TextField name="name" label="お名前*" placeholder="山田　太郎"></TextField>
+                <TextField name="kana" label="お名前（カナ）*" placeholder="ヤマダ　タロウ"></TextField>
+                <TextField name="mailAddress" label="メールアドレス*" placeholder="example@example.com"></TextField>
+                <TextField name="phoneNumber" label="電話番号*" placeholder="080-xxxx-xxxx"></TextField>
 
                 <hr width="100%"/>
                 <div>
@@ -76,7 +88,7 @@ export default function Reserve() {
                 <hr width="100%"/>
 
                 <Flex justifyContent="center">
-                    <Button as="submit">入力内容確認</Button>
+                    <Button type="submit" variation="primary">入力内容確認</Button>
                 </Flex>
             </div>            
         </View>

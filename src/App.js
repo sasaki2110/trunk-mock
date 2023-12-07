@@ -9,8 +9,10 @@ import Home from "./Home.js";
 import MenuBar from "./MenuBar.js"
 import Reserv from "./Reserv.js";
 import NotFound from "./NotFound.js";
+import ReserveCheck from "./ReservCheck.js";
 
 export default function App() {
+
   const breakPoint = useBreakpointValue( {
     small: "small",
     medium: "medium",
@@ -26,6 +28,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/:id" element={<Home />} />
             <Route path="/reserv" element={<Reserv />} />
+            <Route path="/reservcheck" element={<ReserveCheck/>} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
         </Flex>
