@@ -6,16 +6,25 @@ import {
   Image,
   Grid, 
   ToggleButton,
-  Link,
 } from '@aws-amplify/ui-react';
+import { useNavigate } from "react-router-dom";
 
 function Buttons({direction}) {
+  const navigate = useNavigate();
+
+  function handleClickHome(){
+    navigate("/");
+  }
+
+  function handleClickReserv(){
+    navigate("/reserv");
+  }
   return(
     <Flex direction={direction}>
-      <Button border="none">店舗情報</Button>
+      <Button border="none" onClick={handleClickHome}>店舗情報</Button>
       <Button border="none">ご利用ガイド</Button>
       <Button border="none">よくあるご質問</Button>
-      <Button border="none">お問い合わせ・見学予約</Button>
+      <Button border="none" onClick={handleClickReserv}>お問い合わせ・見学予約</Button>
       <Button border="none">ログイン</Button>
     </Flex>
 )
