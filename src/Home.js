@@ -62,7 +62,7 @@ export default function Home() {
   
   return (
     <View>
-        <h1><font  color={tokens.colors.red[40]}>トランクルームほげほげ {params.id} </font></h1>
+        <h1><font  color={tokens.colors.red[40]}>トランクルームふがふが {params.id} </font></h1>
         <Flex gap="0rem" direction="column">
           <Label height="1rem">◆ここに店舗説明</Label>
           <Label height="1rem">◆ここに店舗説明がならぶはず</Label>
